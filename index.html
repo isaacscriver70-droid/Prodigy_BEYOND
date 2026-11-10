@@ -1,4 +1,9 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><title>PRODIGY: BEYOND</title>
-<meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="css/main.css"></head>
+<meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="css/main.css">
+<style>#err{display:none;position:fixed;inset:0;padding:40px;background:#2a1c4a;color:#fff6d8;font:16px/1.5 Georgia,serif;z-index:9}#err code{background:#0006;padding:2px 6px;border-radius:4px}</style></head>
 <body><canvas id="game"></canvas><div id="hint">PRODIGY: BEYOND &mdash; Stage 1 build &nbsp;|&nbsp; Move: WASD / Arrow keys</div>
+<div id="err"><h2>Some game files failed to load</h2><p>Missing: <span id="miss"></span></p><p>The repo must keep the folders: <code>css/</code> and <code>js/</code> next to <code>index.html</code>.</p></div>
+<script>window.__miss=[];function bad(e){__miss.push(e.target.getAttribute('src')||e.target.getAttribute('href'));document.getElementById('miss').textContent=__miss.join(', ');document.getElementById('err').style.display='block'}
+document.querySelector('link').onerror=bad;
+window.addEventListener('error',function(e){if(!e.target||e.target===window)return;bad(e)},true);</script>
 <script src="js/art.js"></script><script src="js/world.js"></script><script src="js/player.js"></script><script src="js/main.js"></script></body></html>
